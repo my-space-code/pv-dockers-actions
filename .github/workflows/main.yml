@@ -1,0 +1,16 @@
+name: Build and Push Docker image
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME:  ${{ github.repository }}
+
+job:
+  build:
+    runs-on: ubuntu-latest
+    
